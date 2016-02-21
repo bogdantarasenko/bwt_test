@@ -39,6 +39,12 @@
           <a class="navbar-brand" href="/Auth">Авотроизация и Регистрация</a>
           <a class="navbar-brand" href="/Feedback">Обратная связь</a>
           <a class="navbar-brand" href="/contacts">Форма обратной связи</a>
+          <?php
+          $auth = new Controller;
+          if($auth->AuthCheck() == true){
+            echo "<a class='navbar-brand' href='/Auth/signout'>выйти</a>";
+          }
+          ?>
         </div>
        
       </div>
