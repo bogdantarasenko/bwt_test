@@ -12,10 +12,10 @@ class Controller_Auth extends Controller
 		public function action_index()
 		{
 			//$data = $this->model->get_data();		
-			if($this->AuthCheck() == true){
-				echo "reg";
-			}else{
+			if($this->AuthCheck() == false){
 				$this->view->generate('auth_view.php', 'template_view.php');
+			}else{
+				$this->view->generate('main_view.php', 'template_view.php');
 			}
 			
 		}
@@ -37,10 +37,13 @@ class Controller_Auth extends Controller
 
 					//$model_feedback->set_data($name,$email,$message);
 					$sign_up = $model_auth->sign_up($name,$surname,$email,$birtgday,$gender,$login,$password);
-					//print_r($model_auth);
-					if($sign_up){
+					//print($sign_up);
+					if($sign_up == true){
 						//self::action_index();
-						echo "ok";//session/redirect
+						$_SESSION["is_auth"] = true;
+						$_SESSION["login"] = $login;
+
+						$this->view->generate('main_view.php', 'template_view.php');
 					}else{
 						self::action_index();
 					}
@@ -66,14 +69,14 @@ class Controller_Auth extends Controller
 					//$model_feedback->set_data($name,$email,$message);
 					$sign_in = $model_auth->sign_in($login,$password);
 
+					//print_r($sign_in);
 					
 					if($sign_in == true){
 						//self::action_index();
 						$_SESSION["is_auth"] = true;
-						$_SESSION["login"] = $login;;
+						$_SESSION["login"] = $login;
 					}else{
 						$_SESSION["is_auth"] = false;
-						self::action_index();
 					}
 			} 
 		}

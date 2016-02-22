@@ -1,15 +1,15 @@
 <div class="row">
         <div class="col-md-4">
-          <form role = "form" method="post" action="/Auth/signin">
+          <form role = "form" method="post" action="/Auth/signin" id="auth">
 
 			   <div class = "form-group">
 			      <label for = "name">Login</label>
-			      <input type = "text" class = "form-control" name = "login" placeholder = "login">
+			      <input type = "text" class = "form-control  required" name = "login" placeholder = "login">
 			   </div>
 
 				<div class = "form-group">
-			      <label for = "name">Password</label>
-			      <input type = "text" class = "form-control" name = "password" placeholder = "password">
+			      <label for = "password">Password</label>
+			      <input type = "password" class = "form-control  required password number" name = "password" placeholder = "password">
 			   </div>
 			   
 			   <button type = "submit" class = "btn btn-default">Submit</button>
@@ -18,35 +18,35 @@
         </div>
 
         <div class="col-md-4">
-          <form role = "form" method="post" action="/Auth/signup">
+          <form role = "form" method="post" action="/Auth/signup" id="registration">
 
 			   <div class = "form-group">
 			      <label for = "name">Name</label>
-			      <input type = "text" class = "form-control" name = "name" placeholder = "Name">
+			      <input type = "text" class = "form-control required" name = "name" placeholder = "Name">
 			   </div>
 
 			   <div class = "form-group">
-			      <label for = "name">Login</label>
-			      <input type = "text" class = "form-control" name = "login" placeholder = "Login">
+			      <label for = "login">Login</label>
+			      <input type = "text" class = "form-control required" name = "login" placeholder = "Login">
 			   </div>
 
 			   <div class = "form-group">
-			      <label for = "name">Password</label>
-			      <input type = "text" class = "form-control" name = "password" placeholder = "Password">
+			      <label for = "password">Password</label>
+			      <input type = "password" class = "form-control required password number" name = "password" placeholder = "Password">
 			   </div>
 
 				<div class = "form-group">
-			      <label for = "name">Surname</label>
-			      <input type = "text" class = "form-control" name = "surname" placeholder = "surname">
+			      <label for = "surname">Surname</label>
+			      <input type = "text" class = "form-control required" name = "surname" placeholder = "surname">
 			   </div>
 
 			   <div class = "form-group">
-			      <label for = "name">email</label>
-			      <input type = "text" class = "form-control" name = "email" placeholder = "email">
+			      <label for = "email">email</label>
+			      <input type = "text" class = "form-control required email" name = "email" placeholder = "email">
 			   </div>
 
 			   <div class = "form-group">
-			      <label for = "name">gender</label>
+			      <label for = "gender">gender</label>
 			      <select class="selectpicker" name="gender">
 					  <option>male</option>
 					  <option>female</option>
@@ -54,8 +54,8 @@
 			   </div>
 			   
 			   <div class = "form-group">
-			      <label for = "name">birtgday</label>
-			      <input type = "text" class = "form-control" name = "birtgday" placeholder = "birtgday">
+			      <label for = "birthday">birtgday</label>
+			      <input type = "text" class = "form-control required" name = "birtgday" placeholder = "birtgday">
 			   </div>
 
 			   <button type = "submit" class = "btn btn-default">Submit</button>

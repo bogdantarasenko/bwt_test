@@ -1,1 +1,2 @@
-<h1>MAIN WEATHER</h1>
+
+<?echo $data;?>
