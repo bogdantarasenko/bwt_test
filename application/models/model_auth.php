@@ -5,7 +5,8 @@ class Model_auth extends Model{
 	public function sign_up($name,$surname,$email,$birthday,$gender,$login,$password)
 	{	
 		$validate = $this->validate($login);
-		if($validate){
+		if($validate)
+		{
 			
 			$name = $this->clean($name);
 			$surname  = $this->clean($surname);
@@ -19,6 +20,7 @@ class Model_auth extends Model{
 			$model = Model::DB();
 			$query = "INSERT INTO `user` (name,surname,email,birthday,gender,login,password) VALUES('$name','$surname','$email','$birthday','$gender','$login','$password')";
 			$res = $model->query($query);
+
 			return $res;
 		}
 				
@@ -31,7 +33,8 @@ class Model_auth extends Model{
 		$query = "SELECT * FROM `user` WHERE login = '$login'";
 		$data = $model->select($query);
 
-		if($data[0]['password'] === $password){
+		if($data[0]['password'] === $password)
+		{
 			$result = true;
 		}else{
 			$result = false;
@@ -47,14 +50,15 @@ class Model_auth extends Model{
 		$query = "SELECT COUNT(id) FROM user WHERE login='$login' ";
 		$data = $model->select($query);
 
-		if($data[0]['COUNT(id)'] > 0){
+		if($data[0]['COUNT(id)'] > 0)
+		{
 			return false;
 		}else{
 			return true;
 		}
 	}
 
-	private function clean($data) {
+	private function clean($data){
 		$value = "";
 	    $value = trim($data);
 	    $value = stripslashes($value);

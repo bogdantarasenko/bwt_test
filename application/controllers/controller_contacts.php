@@ -18,12 +18,12 @@ class Controller_Contacts extends Controller
 			$email = $_POST['email'];
 			$message = $_POST['message'];
 			
-
 			$model_feedback = new Model_Contacts;
-
 			
 			$add_to_db = $model_feedback->set_data($name,$email,$message);
-			if($add_to_db){
+
+			if($add_to_db)
+			{
 				self::action_index();
 			}else{
 				echo "err";

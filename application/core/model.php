@@ -17,10 +17,10 @@ class Model
 
 
 	  public static function DB() {
+
 		    if (!isset(self::$instance)){
 		    	//self::$db = new Model;
 		    	self::$instance =  new self;
-		    	//self::$test =  new self;
 		    	
 		    }
 
@@ -31,6 +31,7 @@ class Model
 
 	  
 	  public function __construct() {
+
 	    $this->mysqli = new mysqli($this->host,$this->user,$this->pass,$this->dbname);
 	    $this->mysqli->query("SET lc_time_names = 'ru_RU'");
 	    $this->mysqli->query("SET NAMES 'utf8'");
@@ -39,16 +40,23 @@ class Model
 	 
 	 
 	  public function select($query) {
+
 	    $result = $this->mysqli->query($query);
-	    if (!$result) return false;
-	    return self::ConvertToArray($result);
+	    if (!$result){
+	    	return false;
+	    }else{
+	    	return self::ConvertToArray($result);
+	    }
+	    
 	  }
 
 	 
 
 	  
 	  public function query($query) {
-	    $success = $this->mysqli->query($query);
+
+	    	$success = $this->mysqli->query($query);
+
 		    if ($success) {
 		      if ($this->mysqli->insert_id === 0) 
 		      	return true;
@@ -60,18 +68,16 @@ class Model
 		    }
 	    
 	  }
-
-	  
-	  public function test(){
-	  	echo "texzt";
-	  }
 	  
 	  
 	  private function ConvertToArray($result_set) {
+
 	    $array = array();
+
 	    while (($row = $result_set->fetch_assoc()) != false) {
 	      $array[] = $row;
 	    }
+	    
 	    return $array;
 	  }
 	  
