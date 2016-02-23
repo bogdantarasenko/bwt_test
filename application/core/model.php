@@ -8,11 +8,12 @@ class Model
 	   
 	  private $mysqli;
 	 
-
+	  /*
 	  private $host  = "localhost";
 	  private $user  = "mysql";
 	  private $pass  = "mysql";
 	  private $dbname = "bwt";
+	  */
 
 
 
@@ -32,7 +33,7 @@ class Model
 	  
 	  public function __construct() {
 
-	    $this->mysqli = new mysqli($this->host,$this->user,$this->pass,$this->dbname);
+	    $this->mysqli = new mysqli(host,user,pass,dbname);
 	    $this->mysqli->query("SET lc_time_names = 'ru_RU'");
 	    $this->mysqli->query("SET NAMES 'utf8'");
 	  }

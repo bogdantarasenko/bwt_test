@@ -1,4 +1,3 @@
-
 {
      "name": "jd/guzzle demo",
 
@@ -15,7 +14,9 @@
      ],
 
      "require": {
-      "guzzlehttp/guzzle": "~6.0"
-   }
+        "sunra/php-simple-html-dom-parser": "v1.5.0",
+        "guzzlehttp/guzzle": "~6.0",
+          "larapack/dd": "1.*"
+      }
 
  }

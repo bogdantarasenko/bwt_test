@@ -9,7 +9,7 @@
 
 				<div class = "form-group">
 			      <label for = "password">Password</label>
-			      <input type = "password" class = "form-control  required password number" name = "password" placeholder = "password">
+			      <input type = "password" class = "form-control  required password" name = "password" placeholder = "password">
 			   </div>
 			   
 			   <button type = "submit" class = "btn btn-default">Submit</button>
